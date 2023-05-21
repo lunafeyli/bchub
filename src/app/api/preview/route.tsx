@@ -1,11 +1,9 @@
 import { ImageResponse } from "@vercel/og";
 import * as c from "@/challenges";
 
-export const config = {
-	runtime: "edge",
-};
+export const runtime = "nodejs";
 
-export default function GET(req: Request) {
+export function GET(req: Request) {
 	const { searchParams } = new URL(req.url);
 	const id = searchParams.get("id");
 
